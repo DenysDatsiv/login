@@ -1,0 +1,75 @@
+<div class="main-container">
+  <div class="header-container">
+    <p *ngIf="error">{{error}}</p>
+    <h2 class="registration-header">
+      Welcome, let's create an account
+    </h2>
+    <p class="registration-subtext">Create an account to keep track of your customers, and contributors. Once your
+      account has been created then don’t forget to verify your account through mail.</p>
+  </div>
+  <form (ngSubmit)="onRegister()" [formGroup]="registrationForm" class="form-container">
+    <div>
+      <div class="username-container">
+        <div class="input-container">
+          <label class="input-label">First Name</label>
+          <input class="username-input" formControlName="firstName" placeholder="Your first name" type="text">
+          <div *ngIf="(registrationForm.get('firstName').invalid && registrationForm.get('firstName').touched) ||
+                                 registrationForm.get('firstName').dirty" class="error-block">
+            <small *ngIf="registrationForm.get('firstName').errors?.['pattern']" class="text-danger">
+              Only letters allowed!
+            </small>
+          </div>
+        </div>
+        <div class="input-container">
+          <label class="input-label">Last Name</label>
+          <input class="username-input" formControlName="lastName" placeholder="Your last name" type="text">
+          <div *ngIf="(registrationForm.get('lastName').invalid && registrationForm.get('lastName').touched) ||
+                                 registrationForm.get('lastName').dirty" class="error-block">
+            <small *ngIf="registrationForm.get('lastName').errors?.['pattern']" class="text-danger">
+              Only letters allowed!
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="input-container">
+        <label class="input-label">
+          {{error === emailExistMessage ? emailExistMessage : 'Work Email'}}
+        </label>
+        <input [ngClass]="{'error-input': error === emailExistMessage}" formControlName="email" type="text">
+      </div>
+      <div class="input-container">
+        <label class="input-label" for="country-select">Country</label>
+        <select class="test" formControlName="country" id="country-select">
+          <option hidden value="">Select a country...</option>
+          <option *ngFor="let country of countries" [value]="country" class="test">{{country}}</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label class="input-label" for="first-hear">Where did you first hear about us?</label>
+        <select formControlName="firstHear" id="first-hear">
+          <option hidden value="">Select an option...</option>
+          <option value="socialMedia">Social media</option>
+          <option value="friends">Friends</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label class="input-label">Password</label>
+        <input [ngClass]="{'invalid-input': registrationForm.get('password').invalid &&
+        registrationForm.get('password').touched}" formControlName="password" placeholder="Must be at least 8 characters."
+               type="password">
+        <div *ngIf="(registrationForm.get('password').invalid && registrationForm.get('password').touched) ||
+                                 registrationForm.get('password').dirty" class="error-block">
+          <small *ngIf="registrationForm.get('password').errors?.['required']"
+                 class="text-danger">Password is required</small>
+        </div>
+      </div>
+    </div>
+    <p class="policies-text">By continuing you agree to the DestLab terms of service and privacy policy.</p>
+    <button class="sign-up-btn" type="submit">Sign up</button>
+  </form>
+  <div class="mode-changer-container">
+    <p>Already registered?</p>
+    <a routerLink="/login">Log in</a>
+  </div>
+</div>

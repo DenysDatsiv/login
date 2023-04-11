@@ -1,0 +1,23 @@
+.no-existing-link
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.go-back {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #12141A;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.go-back:hover {
+  background-color: #0056b3;
+}

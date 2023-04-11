@@ -1,0 +1,41 @@
+.sidebar {
+  width: 200px;
+  background-color: #f1f1f1;
+  padding: 16px;
+  transition: width 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-menu-item {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+/* Expanded state styles */
+.sidebar.expanded {
+  width: 80px;
+}
+
+.sidebar.expanded .sidebar-menu-item {
+  display: none;
+}
+
+.toggle-sidebar-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: #f1f1f1;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.toggle-sidebar-btn i {
+  font-size: 24px;
+}

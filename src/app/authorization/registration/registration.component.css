@@ -1,0 +1,149 @@
+.text-danger
+{
+  color: red;
+}
+
+.main-container {
+  margin-top: 18px;
+}
+
+.input-container {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container {
+  margin: 0 23px;
+}
+
+.mode-changer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mode-changer-container a {
+  margin-left: 5px;
+}
+
+.input-label {
+  font-family: 'Inter', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #606778;
+  margin: 5px 0;
+}
+.invalid-input {
+  border-color: red;
+}
+
+input {
+  height: 20px;
+  padding: 10px 15px;
+  border: 1px solid #606778;
+  font-size: 14px;
+  font-weight: 500;
+  background: transparent;
+  border-radius: 4px;
+}
+
+select {
+  background: transparent;
+  border-radius: 4px;
+  padding: 0 15px;
+  height: 40px;
+}
+
+.sign-up-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 0 auto;
+  padding: 16px 24px;
+  width: 100%;
+  height: 52px;
+  background: #12141A;
+  color: #FFFFFF;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.sign-up-btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 32px;
+}
+
+.error-input
+{
+  border: 1px solid red;
+}
+
+.registration-header {
+  font-family: 'Inter', serif;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: #12141A;
+}
+
+.registration-subtext {
+  font-family: 'Inter', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #606778;
+}
+
+.policies-text {
+  color: #606778;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 580px) {
+  .username-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .username-input {
+    min-width: 230px;
+  }
+}
+
+@media (min-width: 720px) {
+  .sign-up-btn {
+    width: 25%;
+    margin: 20px 0 0 auto;
+  }
+
+  .username-container {
+    display: flex;
+    justify-content: start;
+  }
+
+  .username-input {
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-container {
+    margin: 40px;
+  }
+}
