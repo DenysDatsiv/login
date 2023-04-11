@@ -1,12 +1,12 @@
 <div *ngIf="isAuthenticated">
   <div *ngIf="userData === null" class="no-existing-link">
-    <h1 >Oops,something got wrong!</h1>
-    <a class="go-back" (click)="goBack()">Go Back</a>
+    <h1>Oops,something got wrong!</h1>
+    <a (click)="goBack()" class="go-back">Go Back</a>
   </div>
   <h1 *ngIf="userData !== null">Hello, {{userData?.firstName}} {{userData?.lastName}} 👋🏻</h1>
 
 </div>
-<div *ngIf="!isAuthenticated"  class="no-existing-link">
+<div *ngIf="!isAuthenticated" class="no-existing-link">
   <h1>You are not logged in</h1>
-<a class="go-back" routerLink="/login">Move to login page</a>
+  <a class="go-back" routerLink="/login">Move to login page</a>
 </div>
